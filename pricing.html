@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - IturanMob USA | Compare All Plans</title>
+    <meta name="description" content="Compare all IturanMob plans - Light, Gold, Premium, and Platinum. Find the perfect vehicle sharing solution for your fleet.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --turquoise: #00D4C5;
+            --navy: #1A1F3A;
+            --white: #FFFFFF;
+            --gray: #666666;
+            --light-gray: #F8F9FA;
+            --dark-gray: #333333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', 'Inter', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: var(--navy);
+            color: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--turquoise);
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--turquoise);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: #00A8B8;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy), #2A3F5A);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            overflow-x: auto;
+            margin-top: 3rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        thead tr {
+            background: var(--navy);
+            color: var(--white);
+        }
+        
+        th {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .plan-price {
+            font-size: 2rem;
+            color: var(--turquoise);
+            font-weight: bold;
+        }
+        
+        .recommended {
+            background: var(--turquoise) !important;
+            position: relative;
+        }
+        
+        .recommended::before {
+            content: "⭐ MOST POPULAR";
+            position: absolute;
+            top: 0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            color: var(--turquoise);
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 1.25rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .category-header td {
+            background: var(--light-gray);
+            font-weight: bold;
+            text-align: left;
+            color: var(--navy);
+            font-size: 1.1rem;
+        }
+        
+        .feature-name {
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .check {
+            color: var(--turquoise);
+            font-size: 1.5rem;
+        }
+        
+        .cross {
+            color: #ccc;
+            font-size: 1.5rem;
+        }
+        
+        .best-for {
+            background: #f0f0f0;
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        .cta-row td {
+            padding: 1.5rem;
+        }
+        
+        .cta-row button {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+        
+        .btn-primary-btn {
+            background: var(--turquoise);
+            color: var(--white);
+        }
+        
+        .btn-primary-btn:hover {
+            background: #00A8B8;
+        }
+        
+        /* ROI Calculator */
+        .roi-calculator {
+            background: var(--light-gray);
+            padding: 3rem;
+            border-radius: 12px;
+            margin-top: 4rem;
+        }
+        
+        .roi-calculator h2 {
+            text-align: center;
+            color: var(--navy);
+            margin-bottom: 2rem;
+        }
+        
+        .roi-content {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .roi-input {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+        
+        .roi-input label {
+            font-weight: 600;
+            flex: 1;
+        }
+        
+        .roi-input input {
+            width: 150px;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .roi-results {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        .roi-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        .roi-row.total {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--turquoise);
+            padding-top: 1rem;
+            border-top: 2px solid #ddd;
+            margin-top: 1rem;
+        }
+        
+        /* Enterprise CTA */
+        .enterprise-cta {
+            background: linear-gradient(135deg, var(--navy), #2A3F5A);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .enterprise-cta h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .enterprise-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Mobile Cards (for small screens) */
+        .mobile-plans {
+            display: none;
+        }
+        
+        @media (max-width: 968px) {
+            .comparison-table {
+                display: none;
+            }
+            
+            .mobile-plans {
+                display: block;
+            }
+            
+            .plan-card {
+                background: var(--white);
+                border-radius: 12px;
+                padding: 2rem;
+                margin-bottom: 2rem;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+            
+            .plan-card.recommended {
+                border: 3px solid var(--turquoise);
+                position: relative;
+            }
+            
+            .popular-badge {
+                background: var(--turquoise);
+                color: var(--white);
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                display: inline-block;
+                margin-bottom: 1rem;
+                font-size: 0.85rem;
+                font-weight: bold;
+            }
+            
+            .plan-card h3 {
+                color: var(--navy);
+                margin-bottom: 0.5rem;
+            }
+            
+            .plan-card .price {
+                font-size: 2rem;
+                color: var(--turquoise);
+                font-weight: bold;
+                margin: 1rem 0;
+            }
+            
+            .plan-card .setup {
+                background: #f0f0f0;
+                padding: 1rem;
+                border-radius: 5px;
+                margin: 1rem 0;
+                font-size: 0.9rem;
+            }
+            
+            .plan-card ul {
+                list-style: none;
+                margin: 1.5rem 0;
+            }
+            
+            .plan-card li {
+                padding: 0.5rem 0;
+                padding-left: 1.5rem;
+                position: relative;
+            }
+            
+            .plan-card li.included::before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                color: var(--turquoise);
+                font-weight: bold;
+            }
+            
+            .plan-card li.excluded::before {
+                content: "✗";
+                position: absolute;
+                left: 0;
+                color: #ccc;
+                font-weight: bold;
+            }
+            
+            .plan-card .best-for-mobile {
+                background: #f0f0f0;
+                padding: 1rem;
+                border-radius: 5px;
+                font-style: italic;
+                color: var(--gray);
+                font-size: 0.9rem;
+                margin: 1rem 0;
+            }
+            
+            .plan-card button {
+                width: 100%;
+                padding: 1rem;
+                border: none;
+                border-radius: 5px;
+                font-weight: 600;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="ituranmob-website.html" class="logo">ITURANMOB</a>
+            <a href="ituranmob-website.html#demo" class="btn-primary">Schedule Demo</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Compare All Plans</h1>
+        <p>Choose the perfect ControlIt plan for your fleet</p>
+    </section>
+
+    <!-- Pricing Comparison Table (Desktop) -->
+    <div class="container">
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align: left; background: var(--light-gray); color: var(--navy);">Features</th>
+                        <th>
+                            <div class="plan-name">Light</div>
+                            <div class="plan-price">$6<small style="font-size: 0.5em; font-weight: normal;">/mo</small></div>
+                        </th>
+                        <th>
+                            <div class="plan-name">Gold</div>
+                            <div class="plan-price">$9<small style="font-size: 0.5em; font-weight: normal;">/mo</small></div>
+                        </th>
+                        <th>
+                            <div class="plan-name">Premium</div>
+                            <div class="plan-price">$14.99<small style="font-size: 0.5em; font-weight: normal;">/mo</small></div>
+                        </th>
+                        <th class="recommended">
+                            <div class="plan-name" style="padding-top: 1.5rem;">Platinum</div>
+                            <div class="plan-price">$24.99<small style="font-size: 0.5em; font-weight: normal;">/mo</small></div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Setup Costs -->
+                    <tr class="category-header">
+                        <td colspan="5">Setup Costs (One-Time)</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Device Hardware</td>
+                        <td>$60</td>
+                        <td>$100</td>
+                        <td>$120</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Installation</td>
+                        <td>$100</td>
+                        <td>$100</td>
+                        <td>$120</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr style="background: #f8f9fa; font-weight: bold;">
+                        <td class="feature-name">Total Setup</td>
+                        <td>$160</td>
+                        <td>$200</td>
+                        <td>$240</td>
+                        <td>$300</td>
+                    </tr>
+                    
+                    <!-- Core Features -->
+                    <tr class="category-header">
+                        <td colspan="5">Core Features</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Admin Portal & Dashboard</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">GPS Tracking & Real-Time Location</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Geofencing & Zone Alerts</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Remote Immobilization</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Lock/Unlock Doors (Keyless Entry)</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Vehicle Telemetry Data (CAN Bus)</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    
+                    <!-- Software & Apps -->
+                    <tr class="category-header">
+                        <td colspan="5">Software & Integration</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">White-Label Mobile App (iOS & Android)</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Web Link App (No Download Required)</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Integrated Booking System & CRM</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">KYC & Damage Inspection</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Payment Processing Integration</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    
+                    <!-- Best For -->
+                    <tr class="best-for">
+                        <td class="feature-name"><strong>Best For:</strong></td>
+                        <td>Basic fleet visibility</td>
+                        <td>Theft prevention</td>
+                        <td>Small fleets & corporate pool cars</td>
+                        <td>Rental companies & professional fleet operators</td>
+                    </tr>
+                    
+                    <!-- CTA Buttons -->
+                    <tr class="cta-row">
+                        <td></td>
+                        <td><button class="btn-secondary" onclick="selectPlan('light')">Get Started</button></td>
+                        <td><button class="btn-secondary" onclick="selectPlan('gold')">Get Started</button></td>
+                        <td><button class="btn-secondary" onclick="selectPlan('premium')">Get Started</button></td>
+                        <td><button class="btn-primary-btn" onclick="selectPlan('platinum')">Schedule Demo</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Mobile View (Cards) -->
+        <div class="mobile-plans">
+            <!-- Light -->
+            <div class="plan-card">
+                <h3>ControlIt Light</h3>
+                <div class="price">$6<small>/mo</small></div>
+                <div class="setup"><strong>Setup:</strong> $60 device + $100 install = $160</div>
+                <ul>
+                    <li class="included">Admin Portal & Dashboard</li>
+                    <li class="included">GPS Tracking & Real-Time Location</li>
+                    <li class="excluded">Geofencing & Zone Alerts</li>
+                    <li class="excluded">Remote Immobilization</li>
+                    <li class="excluded">Lock/Unlock Doors</li>
+                    <li class="excluded">Vehicle Telemetry</li>
+                    <li class="excluded">Mobile App</li>
+                    <li class="excluded">Booking System/CRM</li>
+                </ul>
+                <div class="best-for-mobile">Best for: Basic fleet visibility</div>
+                <button class="btn-secondary" onclick="selectPlan('light')">Get Started</button>
+            </div>
+            
+            <!-- Gold -->
+            <div class="plan-card">
+                <h3>ControlIt Gold</h3>
+                <div class="price">$9<small>/mo</small></div>
+                <div class="setup"><strong>Setup:</strong> $100 device + $100 install = $200</div>
+                <ul>
+                    <li class="included">Admin Portal & Dashboard</li>
+                    <li class="included">GPS Tracking & Real-Time Location</li>
+                    <li class="included">Remote Immobilization</li>
+                    <li class="excluded">Geofencing & Zone Alerts</li>
+                    <li class="excluded">Lock/Unlock Doors</li>
+                    <li class="excluded">Vehicle Telemetry</li>
+                    <li class="excluded">Mobile App</li>
+                    <li class="excluded">Booking System/CRM</li>
+                </ul>
+                <div class="best-for-mobile">Best for: Theft prevention</div>
+                <button class="btn-secondary" onclick="selectPlan('gold')">Get Started</button>
+            </div>
+            
+            <!-- Premium -->
+            <div class="plan-card">
+                <h3>ControlIt Premium</h3>
+                <div class="price">$14.99<small>/mo</small></div>
+                <div class="setup"><strong>Setup:</strong> $120 device + $120 install = $240</div>
+                <ul>
+                    <li class="included">Admin Portal & Dashboard</li>
+                    <li class="included">GPS Tracking & Real-Time Location</li>
+                    <li class="included">Remote Immobilization</li>
+                    <li class="included">Lock/Unlock Doors (Keyless)</li>
+                    <li class="excluded">Geofencing & Zone Alerts</li>
+                    <li class="excluded">Vehicle Telemetry</li>
+                    <li class="excluded">Mobile App</li>
+                    <li class="excluded">Booking System/CRM</li>
+                </ul>
+                <div class="best-for-mobile">Best for: Small fleets & corporate pool cars</div>
+                <button class="btn-secondary" onclick="selectPlan('premium')">Get Started</button>
+            </div>
+            
+            <!-- Platinum -->
+            <div class="plan-card recommended">
+                <div class="popular-badge">⭐ MOST POPULAR</div>
+                <h3>ControlIt Platinum</h3>
+                <div class="price">$24.99<small>/mo</small></div>
+                <div class="setup"><strong>Setup:</strong> $150 device + $150 install = $300</div>
+                <ul>
+                    <li class="included">Admin Portal & Dashboard</li>
+                    <li class="included">GPS Tracking & Real-Time Location</li>
+                    <li class="included">Geofencing & Zone Alerts</li>
+                    <li class="included">Remote Immobilization</li>
+                    <li class="included">Lock/Unlock Doors (Keyless)</li>
+                    <li class="included">Vehicle Telemetry (Full CAN Bus)</li>
+                    <li class="included">White-Label Mobile App</li>
+                    <li class="included">Booking System & CRM</li>
+                    <li class="included">KYC & Damage Inspection</li>
+                    <li class="included">Payment Processing</li>
+                </ul>
+                <div class="best-for-mobile">Best for: Rental companies & professional fleet operators</div>
+                <button class="btn-primary-btn" onclick="selectPlan('platinum')">Schedule Demo</button>
+            </div>
+        </div>
+
+        <!-- ROI Calculator -->
+        <div class="roi-calculator">
+            <h2>Calculate Your Return on Investment</h2>
+            <p style="text-align: center; color: var(--gray); margin-bottom: 2rem;">Adjust the assumptions below based on your operation</p>
+            <div class="roi-content">
+                <h3 style="margin-bottom: 1.5rem; color: var(--navy); text-align: center;">Your Fleet</h3>
+                <div class="roi-input">
+                    <label>Fleet Size:</label>
+                    <input type="number" id="fleet-size" value="50" min="1" max="1000">
+                </div>
+                <div class="roi-input">
+                    <label>Average Vehicle Value:</label>
+                    <input type="number" id="vehicle-value" value="25000" min="5000" step="1000">
+                </div>
+                <div class="roi-input">
+                    <label>Average Daily Rental Rate:</label>
+                    <input type="number" id="rental-rate" value="45" min="10" step="5">
+                </div>
+                <div class="roi-input">
+                    <label>Current Theft Rate (% of fleet/year):</label>
+                    <input type="number" id="theft-rate" value="1" min="0" max="10" step="0.1">
+                    <span style="font-size: 0.85rem; color: var(--gray); margin-left: 0.5rem;">(Industry avg: 1%)</span>
+                </div>
+                <div class="roi-input">
+                    <label>Staff Hours/Day on Key Management:</label>
+                    <input type="number" id="staff-hours" value="2" min="0" max="8" step="0.5">
+                </div>
+                <div class="roi-input">
+                    <label>Average Staff Hourly Rate:</label>
+                    <input type="number" id="staff-rate" value="15" min="10" max="50">
+                </div>
+                <div class="roi-input">
+                    <label>Damage Disputes/Year:</label>
+                    <input type="number" id="disputes" value="5" min="0" max="100">
+                    <span style="font-size: 0.85rem; color: var(--gray); margin-left: 0.5rem;">@ $500 avg cost</span>
+                </div>
+                
+                <div class="roi-results">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--navy);">Estimated Annual Savings</h3>
+                    <div class="roi-row">
+                        <div>
+                            <strong>Prevent Theft</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--gray);">Reduce theft by 80% with GPS tracking & immobilization</span>
+                        </div>
+                        <strong style="color: var(--turquoise);" id="theft-savings">+$20,000</strong>
+                    </div>
+                    <div class="roi-row">
+                        <div>
+                            <strong>Reduce Staff Time</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--gray);">Eliminate manual key management</span>
+                        </div>
+                        <strong style="color: var(--turquoise);" id="staff-savings">+$10,950</strong>
+                    </div>
+                    <div class="roi-row">
+                        <div>
+                            <strong>Increase Utilization</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--gray);">10% more rental days via faster turnaround</span>
+                        </div>
+                        <strong style="color: var(--turquoise);" id="utilization-benefit">+$82,125</strong>
+                    </div>
+                    <div class="roi-row">
+                        <div>
+                            <strong>Reduce Damage Disputes</strong><br>
+                            <span style="font-size: 0.85rem; color: var(--gray);">Photo inspection eliminates 80% of disputes</span>
+                        </div>
+                        <strong style="color: var(--turquoise);" id="dispute-savings">+$2,000</strong>
+                    </div>
+                    <div class="roi-row total">
+                        <span>Total Annual Benefit:</span>
+                        <span id="total-benefit">$115,075</span>
+                    </div>
+                    <div class="roi-row" style="font-size: 1rem; color: var(--gray); font-weight: normal; margin-top: 1.5rem; padding-top: 1rem; border-top: 2px solid #e0e0e0;">
+                        <span>Your Annual Cost (ControlIt Platinum):</span>
+                        <span id="annual-cost">$15,294</span>
+                    </div>
+                    <div class="roi-row" style="font-size: 1rem; color: var(--gray); font-weight: normal;">
+                        <span style="padding-left: 2rem;">Setup (Year 1 only):</span>
+                        <span id="setup-cost">$15,000</span>
+                    </div>
+                    <div class="roi-row" style="font-size: 1rem; color: var(--gray); font-weight: normal;">
+                        <span style="padding-left: 2rem;">Subscription (recurring):</span>
+                        <span id="subscription-cost">$14,994/year</span>
+                    </div>
+                    <div class="roi-row total" style="border-top: 3px solid var(--turquoise); padding-top: 1.5rem;">
+                        <span>Net Benefit (Year 1):</span>
+                        <span id="net-benefit">$84,781</span>
+                    </div>
+                    <div class="roi-row total">
+                        <span>ROI:</span>
+                        <span id="roi-percent">278%</span>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: var(--gray); background: #f8f9fa; padding: 1rem; border-radius: 8px;">
+                    <p><strong>Assumptions:</strong></p>
+                    <p style="margin-top: 0.5rem;">• 80% theft reduction with GPS tracking & remote immobilization</p>
+                    <p>• 100% elimination of key management time with keyless entry</p>
+                    <p>• 10% utilization increase through faster turnaround & reduced downtime</p>
+                    <p>• 80% reduction in damage disputes with automated photo inspection</p>
+                    <p style="margin-top: 0.75rem; font-style: italic;">* Results based on industry data and customer reports. Your actual results may vary.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enterprise CTA -->
+        <div class="enterprise-cta">
+            <h2>Managing 100+ Vehicles?</h2>
+            <p>Let's discuss custom pricing, volume benefits, and enterprise features<br>tailored specifically to your operation.</p>
+            <a href="ituranmob-website.html#demo" class="btn-primary">Talk to Sales</a>
+        </div>
+    </div>
+
+    <script>
+        // Plan selection
+        function selectPlan(plan) {
+            window.location.href = 'ituranmob-website.html#demo';
+        }
+        
+        // ROI Calculator
+        const fleetInput = document.getElementById('fleet-size');
+        const vehicleValueInput = document.getElementById('vehicle-value');
+        const rentalInput = document.getElementById('rental-rate');
+        const theftRateInput = document.getElementById('theft-rate');
+        const staffHoursInput = document.getElementById('staff-hours');
+        const staffRateInput = document.getElementById('staff-rate');
+        const disputesInput = document.getElementById('disputes');
+        
+        function updateROI() {
+            const fleet = parseInt(fleetInput.value) || 50;
+            const vehicleValue = parseInt(vehicleValueInput.value) || 25000;
+            const dailyRate = parseInt(rentalInput.value) || 45;
+            const theftRate = parseFloat(theftRateInput.value) || 1;
+            const staffHours = parseFloat(staffHoursInput.value) || 2;
+            const staffRate = parseInt(staffRateInput.value) || 15;
+            const disputes = parseInt(disputesInput.value) || 5;
+            
+            // 1. THEFT PREVENTION
+            // Expected thefts per year = fleet * (theft rate / 100)
+            // ControlIt reduces theft by 80% (GPS + immobilization)
+            // Savings = prevented thefts * vehicle value
+            const expectedThefts = fleet * (theftRate / 100);
+            const preventedThefts = expectedThefts * 0.80;
+            const theftSavings = preventedThefts * vehicleValue;
+            
+            // 2. STAFF TIME SAVINGS
+            // Hours saved per year = staff hours/day * 365 days
+            // Cost savings = hours * staff rate
+            const staffSavings = staffHours * 365 * staffRate;
+            
+            // 3. UTILIZATION INCREASE
+            // 10% more rental days through faster turnaround
+            // Annual revenue = fleet * daily rate * 365 days
+            // Increase = 10% of annual revenue
+            const utilizationBenefit = fleet * dailyRate * 365 * 0.10;
+            
+            // 4. DISPUTE REDUCTION
+            // Photo inspection eliminates 80% of disputes
+            // Average dispute cost = $500
+            const disputeSavings = disputes * 0.80 * 500;
+            
+            // TOTAL BENEFITS
+            const totalBenefit = theftSavings + staffSavings + utilizationBenefit + disputeSavings;
+            
+            // COSTS (ControlIt Platinum)
+            // Setup: $150 device + $150 install = $300 per vehicle
+            // Monthly: $24.99 per vehicle
+            const setupCost = fleet * 300;
+            const subscriptionCost = fleet * 24.99 * 12;
+            const totalCost = setupCost + subscriptionCost;
+            
+            // NET BENEFIT & ROI
+            const netBenefit = totalBenefit - totalCost;
+            const roi = (netBenefit / totalCost * 100).toFixed(0);
+            
+            // UPDATE DISPLAY
+            document.getElementById('theft-savings').textContent = '+$' + Math.round(theftSavings).toLocaleString();
+            document.getElementById('staff-savings').textContent = '+$' + Math.round(staffSavings).toLocaleString();
+            document.getElementById('utilization-benefit').textContent = '+$' + Math.round(utilizationBenefit).toLocaleString();
+            document.getElementById('dispute-savings').textContent = '+$' + Math.round(disputeSavings).toLocaleString();
+            document.getElementById('total-benefit').textContent = '$' + Math.round(totalBenefit).toLocaleString();
+            document.getElementById('setup-cost').textContent = '$' + setupCost.toLocaleString();
+            document.getElementById('subscription-cost').textContent = '$' + Math.round(subscriptionCost).toLocaleString() + '/year';
+            document.getElementById('annual-cost').textContent = '$' + Math.round(totalCost).toLocaleString();
+            document.getElementById('net-benefit').textContent = '$' + Math.round(netBenefit).toLocaleString();
+            document.getElementById('roi-percent').textContent = roi + '%';
+        }
+        
+        // Add event listeners to all inputs
+        fleetInput.addEventListener('input', updateROI);
+        vehicleValueInput.addEventListener('input', updateROI);
+        rentalInput.addEventListener('input', updateROI);
+        theftRateInput.addEventListener('input', updateROI);
+        staffHoursInput.addEventListener('input', updateROI);
+        staffRateInput.addEventListener('input', updateROI);
+        disputesInput.addEventListener('input', updateROI);
+        
+        // Initialize
+        updateROI();
+    </script>
+</body>
+</html>
