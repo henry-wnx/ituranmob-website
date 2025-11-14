@@ -1389,86 +1389,73 @@
     <section class="section section-dark" id="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Transparent Pricing, No Surprises</h2>
-                <p>Simple, predictable costs that scale with your fleet.</p>
+                <h2>Choose Your Plan</h2>
+                <p>Simple, predictable pricing that scales with your fleet.</p>
             </div>
-            <div class="pricing-cards">
+            <div class="pricing-cards" style="grid-template-columns: repeat(2, 1fr); max-width: 900px; margin: 3rem auto 0;">
                 <div class="pricing-card">
-                    <div class="pricing-label">Customization</div>
-                    <div class="pricing-amount">$0</div>
-                    <div class="pricing-period">For fleets of 30+ vehicles</div>
+                    <div class="pricing-label">Essential Fleet Control</div>
+                    <div style="font-size: 1.1rem; color: var(--navy); font-weight: 600; margin-bottom: 0.5rem;">ControlIt Premium</div>
+                    <div class="pricing-amount">$14.99</div>
+                    <div class="pricing-period">Per vehicle per month</div>
+                    <div style="text-align: center; margin: 1rem 0; padding: 0.75rem; background: #f0f0f0; border-radius: 5px; font-size: 0.9rem;">
+                        <strong>Setup:</strong> $120 device + $120 install = $240
+                    </div>
                     <hr>
                     <ul>
-                        <li>Requirements gathering and workflow design</li>
-                        <li>White-label app configuration</li>
-                        <li>Booking logic customization</li>
-                        <li>Smart pricing rules setup</li>
-                        <li>Integration support</li>
+                        <li>GPS tracking & real-time location</li>
+                        <li>Remote immobilization</li>
+                        <li>Lock/unlock doors via smartphone</li>
+                        <li>Admin portal & backoffice</li>
+                        <li>Real-time alerts</li>
                     </ul>
+                    <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; font-size: 0.9rem; color: var(--gray);">
+                        <strong>Perfect for:</strong><br>
+                        Small fleets & corporate pool cars
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <button class="btn-primary" style="width: 100%; background: var(--navy);" onclick="scrollToSection('demo')">Get Started</button>
+                    </div>
                 </div>
                 <div class="pricing-card featured">
-                    <div class="pricing-badge">ONE-TIME</div>
-                    <div class="pricing-label">Device (Hardware)</div>
-                    <div class="pricing-amount">$149</div>
-                    <div class="pricing-period">Per vehicle</div>
-                    <hr>
-                    <ul>
-                        <li>Queclink GV851 or WR310 device</li>
-                        <li>Installation training for your technicians</li>
-                        <li>Device warranty and support</li>
-                        <li>4G Cat M1 connectivity ready</li>
-                    </ul>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-label">Subscription (Monthly)</div>
+                    <div class="pricing-badge">MOST POPULAR</div>
+                    <div class="pricing-label">Complete Rental Platform</div>
+                    <div style="font-size: 1.1rem; color: var(--navy); font-weight: 600; margin-bottom: 0.5rem;">ControlIt Platinum</div>
                     <div class="pricing-amount">$24.99</div>
                     <div class="pricing-period">Per vehicle per month</div>
+                    <div style="text-align: center; margin: 1rem 0; padding: 0.75rem; background: #e8f9f7; border-radius: 5px; font-size: 0.9rem; border: 1px solid var(--turquoise);">
+                        <strong>Setup:</strong> $150 device + $150 install = $300
+                    </div>
                     <hr>
                     <ul>
-                        <li>Cloud platform access (AWS hosted)</li>
-                        <li>Mobile apps or API access</li>
-                        <li>Admin dashboard and backoffice</li>
-                        <li>4G connectivity and data</li>
-                        <li>Software updates and new features</li>
-                        <li>Customer support</li>
+                        <li><strong>Everything in Premium, plus:</strong></li>
+                        <li>Advanced geofencing & zone alerts</li>
+                        <li>Full vehicle telemetry (fuel, battery, speed)</li>
+                        <li>White-label mobile app (iOS & Android)</li>
+                        <li>Integrated booking system & CRM</li>
+                        <li>KYC & damage inspection</li>
+                        <li>Payment processing integration</li>
                     </ul>
+                    <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; font-size: 0.9rem; color: var(--gray);">
+                        <strong>Perfect for:</strong><br>
+                        Rental companies & fleet operators
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <button class="btn-primary" style="width: 100%;" onclick="scrollToSection('demo')">Schedule Demo</button>
+                    </div>
                 </div>
             </div>
-
-            <div class="calculator">
-                <h3>Calculate Your Investment</h3>
-                <div class="calculator-content">
-                    <div class="slider-container">
-                        <label for="vehicle-slider">Number of vehicles:</label>
-                        <input type="range" id="vehicle-slider" class="slider" min="1" max="100" value="10">
-                        <div class="vehicle-count"><span id="vehicle-display">10</span> vehicles</div>
-                    </div>
-                    <div class="calculation-result">
-                        <div class="calc-row">
-                            <span>Setup (Hardware):</span>
-                            <strong id="setup-cost">$1,490</strong>
-                        </div>
-                        <div class="calc-row">
-                            <span>Monthly Cost:</span>
-                            <strong id="monthly-cost">$249.90/month</strong>
-                        </div>
-                        <div class="calc-row">
-                            <span>Annual Cost:</span>
-                            <strong id="annual-cost">$2,998.80/year</strong>
-                        </div>
-                        <div class="calc-row total">
-                            <span>Total Year 1:</span>
-                            <span id="total-cost">$4,488.80</span>
-                        </div>
-                        <div style="text-align: center; margin-top: 2rem;">
-                            <button class="btn-primary">Get Custom Quote</button>
-                        </div>
-                    </div>
-                    <div class="calc-footer">
-                        <p>✓ Includes: White-label apps, installation training, ongoing support</p>
-                        <p>✓ No hidden fees | Cancel anytime</p>
-                    </div>
-                </div>
+            
+            <div style="text-align: center; margin-top: 2.5rem; font-size: 1rem;">
+                <a href="pricing.html" style="color: var(--navy); font-weight: 600; text-decoration: underline;">
+                    Need basic tracking only? Compare all 4 plans →
+                </a>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, var(--navy), #2A3F5A); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">Managing 100+ Vehicles?</div>
+                <p style="margin-bottom: 1.5rem; opacity: 0.9;">Let's discuss custom pricing and enterprise features tailored to your operation.</p>
+                <button class="btn-primary" onclick="scrollToSection('demo')">Talk to Sales</button>
             </div>
         </div>
     </section>
@@ -1689,29 +1676,6 @@
             answer.classList.toggle('active');
             icon.style.transform = answer.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
         }
-
-        // Pricing Calculator
-        const slider = document.getElementById('vehicle-slider');
-        const vehicleDisplay = document.getElementById('vehicle-display');
-        const setupCost = document.getElementById('setup-cost');
-        const monthlyCost = document.getElementById('monthly-cost');
-        const annualCost = document.getElementById('annual-cost');
-        const totalCost = document.getElementById('total-cost');
-
-        slider.addEventListener('input', function() {
-            const vehicles = parseInt(this.value);
-            vehicleDisplay.textContent = vehicles;
-            
-            const setup = vehicles * 149;
-            const monthly = vehicles * 24.99;
-            const annual = monthly * 12;
-            const total = setup + annual;
-            
-            setupCost.textContent = '$' + setup.toLocaleString();
-            monthlyCost.textContent = '$' + monthly.toFixed(2) + '/month';
-            annualCost.textContent = '$' + annual.toFixed(2) + '/year';
-            totalCost.textContent = '$' + total.toFixed(2);
-        });
 
         // Form submission
         function handleFormSubmit(event) {

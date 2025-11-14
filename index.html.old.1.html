@@ -163,6 +163,7 @@
             transform: translateY(-2px);
         }
         
+        /* Mobile menu toggle */
         .mobile-toggle {
             display: none;
             font-size: 1.5rem;
@@ -288,50 +289,6 @@
         .stat-label {
             color: var(--gray);
             font-size: 0.95rem;
-        }
-        
-        /* Partner Logos Section */
-        .partner-section {
-            background: #f0f9f8;
-            padding: 2.5rem 2rem;
-            margin-top: 2rem;
-            border-radius: 12px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .partner-section h4 {
-            color: var(--navy);
-            text-align: center;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .partner-section p {
-            text-align: center;
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .partner-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .partner-logos img {
-            height: 50px;
-            width: auto;
-            filter: grayscale(0%);
-            transition: transform 0.3s;
-        }
-        
-        .partner-logos img:hover {
-            transform: scale(1.05);
         }
         
         /* ========== SECTION CONTAINERS ========== */
@@ -645,86 +602,6 @@
             font-size: 0.95rem;
         }
         
-        /* Partner Ecosystem Section */
-        .partner-ecosystem {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 12px;
-            margin-top: 3rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        .partner-ecosystem h3 {
-            color: var(--navy);
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        
-        .partner-ecosystem .intro {
-            text-align: center;
-            color: var(--gray);
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .partner-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .partner-card {
-            background: var(--light-gray);
-            padding: 2rem;
-            border-radius: 8px;
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-        }
-        
-        .partner-card-logos {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            min-width: 120px;
-        }
-        
-        .partner-card-logos img {
-            height: 40px;
-            width: auto;
-        }
-        
-        .partner-card-content h4 {
-            color: var(--navy);
-            margin-bottom: 0.75rem;
-        }
-        
-        .partner-card-content p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .partner-card-content ul {
-            list-style: none;
-            font-size: 0.9rem;
-        }
-        
-        .partner-card-content li {
-            padding: 0.3rem 0;
-            color: var(--gray);
-        }
-        
-        .partner-card-content li::before {
-            content: "✓ ";
-            color: var(--turquoise);
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-        
         /* ========== MOBILE APP SHOWCASE ========== */
         .app-showcase {
             background: linear-gradient(135deg, var(--navy) 0%, #2A3F5A 100%);
@@ -791,21 +668,11 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             text-align: center;
             position: relative;
-            transition: all 0.3s;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
         .pricing-card.featured {
             border: 3px solid var(--turquoise);
             transform: scale(1.05);
-        }
-        
-        .pricing-card.featured:hover {
-            transform: scale(1.08) translateY(-5px);
         }
         
         .pricing-badge {
@@ -824,16 +691,9 @@
         .pricing-label {
             font-size: 0.9rem;
             color: var(--gray);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
-        
-        .pricing-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--navy);
-            margin-bottom: 1rem;
         }
         
         .pricing-amount {
@@ -846,15 +706,7 @@
         .pricing-period {
             font-size: 0.9rem;
             color: var(--gray);
-            margin-bottom: 1rem;
-        }
-        
-        .pricing-setup {
-            background: var(--light-gray);
-            padding: 1rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .pricing-card hr {
@@ -882,197 +734,97 @@
             margin-right: 0.5rem;
         }
         
-        .pricing-card li.excluded::before {
-            content: "✗ ";
-            color: #ccc;
-        }
-        
-        .pricing-card li.excluded {
-            color: #999;
-            text-decoration: line-through;
-        }
-        
-        .pricing-note {
-            background: #fff9e6;
-            border-left: 3px solid #ffc107;
-            padding: 1rem;
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            color: var(--dark-gray);
-            text-align: left;
-            border-radius: 4px;
-        }
-        
-        .pricing-cta {
-            width: 100%;
-            padding: 1rem;
-            margin-top: 1.5rem;
-            background: var(--turquoise);
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .pricing-cta:hover {
-            background: #00A8B8;
-        }
-        
-        /* ROI Calculator */
-        .roi-calculator {
+        .calculator {
             background: var(--light-gray);
-            padding: 4rem 2rem;
-            margin-top: 4rem;
+            padding: 3rem;
             border-radius: 12px;
+            margin-top: 3rem;
         }
         
-        .roi-calculator h2 {
+        .calculator h3 {
             text-align: center;
             color: var(--navy);
+            margin-bottom: 2rem;
+        }
+        
+        .calculator-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .slider-container {
+            margin: 2rem 0;
+        }
+        
+        .slider-container label {
+            font-weight: 600;
+            display: block;
             margin-bottom: 1rem;
         }
         
-        .roi-calculator .subtitle {
-            text-align: center;
-            color: var(--gray);
-            margin-bottom: 3rem;
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
         }
         
-        .roi-content {
-            max-width: 900px;
-            margin: 0 auto;
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--turquoise);
+            cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--turquoise);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .vehicle-count {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--gray);
+            margin: 1.5rem 0;
+        }
+        
+        .calculation-result {
             background: var(--white);
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
-        .roi-inputs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .roi-input-group {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .roi-input-group label {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--navy);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .roi-input-group label .hint {
-            font-size: 0.8rem;
-            font-weight: normal;
-            color: var(--gray);
-        }
-        
-        .roi-input-group input {
-            padding: 0.75rem;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .roi-input-group input:focus {
-            outline: none;
-            border-color: var(--turquoise);
-        }
-        
-        .roi-results {
-            border-top: 2px solid #e0e0e0;
-            padding-top: 2rem;
-        }
-        
-        .roi-results h3 {
-            color: var(--navy);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        
-        .roi-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1.25rem;
-            padding-bottom: 1.25rem;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .roi-row:last-child {
-            border-bottom: none;
-        }
-        
-        .roi-row-label {
-            flex: 1;
-        }
-        
-        .roi-row-label strong {
-            display: block;
-            color: var(--navy);
-            margin-bottom: 0.25rem;
-        }
-        
-        .roi-row-label .description {
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-        
-        .roi-row-value {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--turquoise);
-            min-width: 120px;
-            text-align: right;
-        }
-        
-        .roi-totals {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 3px solid var(--turquoise);
-        }
-        
-        .roi-total-row {
+        .calc-row {
             display: flex;
             justify-content: space-between;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
         
-        .roi-total-row.highlight {
-            font-size: 1.5rem;
-            color: var(--turquoise);
+        .calc-row.total {
+            border-top: 2px solid #ddd;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 1.25rem;
             font-weight: bold;
+            color: var(--turquoise);
         }
         
-        .roi-assumptions {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
+        .calc-footer {
+            text-align: center;
             margin-top: 2rem;
             font-size: 0.9rem;
             color: var(--gray);
-        }
-        
-        .roi-assumptions strong {
-            display: block;
-            color: var(--navy);
-            margin-bottom: 0.5rem;
-        }
-        
-        .roi-assumptions p {
-            margin: 0.3rem 0;
         }
         
         /* ========== FAQ ========== */
@@ -1309,14 +1061,6 @@
             .pricing-card.featured {
                 transform: scale(1);
             }
-            
-            .partner-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .roi-inputs {
-                grid-template-columns: 1fr;
-            }
         }
         
         @media (max-width: 768px) {
@@ -1422,17 +1166,6 @@
             <div class="stat">
                 <div class="stat-number">2019</div>
                 <div class="stat-label">Since (Ituran since 1995)</div>
-            </div>
-        </div>
-        
-        <!-- Turo/Tint Partnership -->
-        <div class="partner-section">
-            <h4>✓ Compatible with Turo Insurance</h4>
-            <p>All ControlIt versions work seamlessly with off-trip car insurance custom-designed for Turo hosts by our partner Tint.</p>
-            <div class="partner-logos">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Turo" style="height: 50px; background: #f0f0f0; padding: 10px; border-radius: 8px;">
-                <span style="font-size: 2rem; color: var(--gray);">+</span>
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Tint" style="height: 50px; background: #f0f0f0; padding: 10px; border-radius: 8px;">
             </div>
         </div>
     </section>
@@ -1615,43 +1348,6 @@
                     <p>GPS tracking, geofencing, remote immobilization, towing alerts, unauthorized movement detection. Optional integration with Ituran's world-class stolen vehicle recovery (SVR) service.</p>
                 </div>
             </div>
-            
-            <!-- Partner Ecosystem -->
-            <div class="partner-ecosystem">
-                <h3>Partner Ecosystem</h3>
-                <p class="intro">ControlIt integrates seamlessly with leading platforms and services to provide complete fleet management solutions.</p>
-                
-                <div class="partner-grid">
-                    <div class="partner-card">
-                        <div class="partner-card-logos">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Turo" style="height: 35px; background: #f0f0f0; padding: 8px; border-radius: 6px;">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="Tint" style="height: 35px; background: #f0f0f0; padding: 8px; border-radius: 6px;">
-                        </div>
-                        <div class="partner-card-content">
-                            <h4>🛡️ Insurance Protection for Turo Hosts</h4>
-                            <p>All ControlIt versions are compatible with off-trip car insurance custom-designed for Turo hosts by our partner Tint.</p>
-                            <ul>
-                                <li>Coverage when vehicle is not rented</li>
-                                <li>Seamless integration with your operations</li>
-                                <li>Competitive rates for fleet owners</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="partner-card">
-                        <div class="partner-card-content" style="width: 100%;">
-                            <h4>🔌 Additional Integrations</h4>
-                            <p>Connect with your existing tools and workflows:</p>
-                            <ul>
-                                <li>Payment gateways (Stripe, others)</li>
-                                <li>Rental ERPs (Locavia and more)</li>
-                                <li>Accounting systems</li>
-                                <li>Custom API integrations</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1693,240 +1389,85 @@
     <section class="section section-dark" id="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Choose Your Plan</h2>
-                <p>Simple, predictable pricing that scales with your fleet.</p>
+                <h2>Transparent Pricing, No Surprises</h2>
+                <p>Simple, predictable costs that scale with your fleet.</p>
             </div>
             <div class="pricing-cards">
-                <!-- Light -->
                 <div class="pricing-card">
-                    <div class="pricing-label">Entry Level</div>
-                    <div class="pricing-name">ControlIt Light</div>
-                    <div class="pricing-amount">$5.99</div>
-                    <div class="pricing-period">Per vehicle per month</div>
-                    <div class="pricing-setup"><strong>Device:</strong> $59.99 (one-time)</div>
+                    <div class="pricing-label">Customization</div>
+                    <div class="pricing-amount">$0</div>
+                    <div class="pricing-period">For fleets of 30+ vehicles</div>
                     <hr>
                     <ul>
-                        <li>Admin portal & dashboard</li>
-                        <li>GPS tracking (daily updates)</li>
-                        <li>On-demand location requests</li>
-                        <li><strong>Remote immobilization</strong></li>
-                        <li class="excluded">Real-time tracking (10min)</li>
-                        <li class="excluded">Keyless lock/unlock</li>
-                        <li class="excluded">Geofencing</li>
-                        <li class="excluded">Vehicle telemetry</li>
-                        <li class="excluded">Mobile app / Booking CRM</li>
+                        <li>Requirements gathering and workflow design</li>
+                        <li>White-label app configuration</li>
+                        <li>Booking logic customization</li>
+                        <li>Smart pricing rules setup</li>
+                        <li>Integration support</li>
                     </ul>
-                    <div class="pricing-note">
-                        <strong>Note:</strong> Location updates once per day. On-demand requests available anytime via admin portal.
-                    </div>
-                    <div class="pricing-note" style="background: #e8f5f7; border-color: #00A8B8;">
-                        <strong>💡 Ideal For:</strong> Cost-efficient tracking with immobilization features.
-                    </div>
-                    <div class="pricing-note" style="background: #f0f9f8; border-color: var(--turquoise);">
-                        ✓ Compatible with Turo insurance (via Tint)
-                    </div>
-                    <button class="pricing-cta" onclick="scrollToSection('demo')">Get Started</button>
                 </div>
-                
-                <!-- Gold -->
-                <div class="pricing-card">
-                    <div class="pricing-label">Professional</div>
-                    <div class="pricing-name">ControlIt Gold</div>
-                    <div class="pricing-amount">$8.99</div>
-                    <div class="pricing-period">Per vehicle per month</div>
-                    <div class="pricing-setup"><strong>Device:</strong> $159.99 (one-time)</div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">ONE-TIME</div>
+                    <div class="pricing-label">Device (Hardware)</div>
+                    <div class="pricing-amount">$149</div>
+                    <div class="pricing-period">Per vehicle</div>
                     <hr>
                     <ul>
-                        <li>Admin portal & dashboard</li>
-                        <li><strong>Real-time tracking (every 10 minutes)</strong></li>
-                        <li><strong>Remote immobilization</strong></li>
-                        <li><strong>Keyless lock/unlock doors</strong></li>
-                        <li>On-demand location requests</li>
-                        <li class="excluded">Geofencing & zone alerts</li>
-                        <li class="excluded">Vehicle telemetry data</li>
-                        <li class="excluded">White-label mobile app</li>
-                        <li class="excluded">Booking system / CRM</li>
+                        <li>Queclink GV851 or WR310 device</li>
+                        <li>Installation training for your technicians</li>
+                        <li>Device warranty and support</li>
+                        <li>4G Cat M1 connectivity ready</li>
                     </ul>
-                    <div class="pricing-note" style="background: #e8f5f7; border-color: #00A8B8;">
-                        <strong>💡 Ideal For:</strong> Adding a premium experience to your clients through remote unlocking/locking and key management.
-                    </div>
-                    <div class="pricing-note" style="background: #f0f9f8; border-color: var(--turquoise);">
-                        ✓ Compatible with Turo insurance (via Tint)
-                    </div>
-                    <button class="pricing-cta" onclick="scrollToSection('demo')">Schedule Demo</button>
                 </div>
-                
-                <!-- Full -->
                 <div class="pricing-card">
-                    <div class="pricing-label">Complete Platform</div>
-                    <div class="pricing-name">ControlIt Full</div>
+                    <div class="pricing-label">Subscription (Monthly)</div>
                     <div class="pricing-amount">$24.99</div>
                     <div class="pricing-period">Per vehicle per month</div>
-                    <div class="pricing-setup"><strong>Device:</strong> $149.99 (one-time)</div>
                     <hr>
                     <ul>
-                        <li><strong>Everything in Gold, plus:</strong></li>
-                        <li><strong>Advanced geofencing & zone alerts</strong></li>
-                        <li><strong>Full vehicle telemetry (CAN bus)</strong></li>
-                        <li><strong>White-label mobile app (iOS & Android)</strong></li>
-                        <li><strong>Integrated booking system & CRM</strong></li>
-                        <li>KYC & damage inspection</li>
-                        <li>Payment processing integration</li>
-                        <li>Weblink app (no download required)</li>
+                        <li>Cloud platform access (AWS hosted)</li>
+                        <li>Mobile apps or API access</li>
+                        <li>Admin dashboard and backoffice</li>
+                        <li>4G connectivity and data</li>
+                        <li>Software updates and new features</li>
+                        <li>Customer support</li>
                     </ul>
-                    <div class="pricing-note" style="background: #e8f5f7; border-color: #00A8B8;">
-                        <strong>💡 Ideal For:</strong> Those seeking a complete solution with booking system, tracking, and telemetry data.
-                    </div>
-                    <div class="pricing-note" style="background: #f0f9f8; border-color: var(--turquoise);">
-                        ✓ Compatible with Turo insurance (via Tint)
-                    </div>
-                    <button class="pricing-cta" onclick="scrollToSection('demo')">Schedule Demo</button>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 2.5rem; padding: 2rem; background: white; border-radius: 12px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <p style="color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem;">
-                    <strong>Note:</strong> Installation, taxes, and shipping are not included in device pricing.
-                </p>
-                <div style="background: linear-gradient(135deg, var(--navy), #2A3F5A); color: white; padding: 2rem; border-radius: 8px;">
-                    <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">Managing 100+ Vehicles?</div>
-                    <p style="margin-bottom: 1.5rem; opacity: 0.9;">Let's discuss custom pricing and enterprise features tailored to your operation.</p>
-                    <button class="btn-primary" onclick="scrollToSection('demo')">Talk to Sales</button>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ROI CALCULATOR -->
-    <section class="roi-calculator">
-        <div class="container">
-            <h2>Calculate Your Return on Investment</h2>
-            <p class="subtitle">Adjust the assumptions below based on your operation</p>
-            
-            <div class="roi-content">
-                <div class="roi-inputs">
-                    <div class="roi-input-group">
-                        <label>
-                            Fleet Size
-                        </label>
-                        <input type="number" id="fleet-size" value="50" min="1" max="1000">
+            <div class="calculator">
+                <h3>Calculate Your Investment</h3>
+                <div class="calculator-content">
+                    <div class="slider-container">
+                        <label for="vehicle-slider">Number of vehicles:</label>
+                        <input type="range" id="vehicle-slider" class="slider" min="1" max="100" value="10">
+                        <div class="vehicle-count"><span id="vehicle-display">10</span> vehicles</div>
                     </div>
-                    
-                    <div class="roi-input-group">
-                        <label>
-                            Average Vehicle Value
-                        </label>
-                        <input type="number" id="vehicle-value" value="25000" min="5000" step="1000">
-                    </div>
-                    
-                    <div class="roi-input-group">
-                        <label>
-                            Average Daily Rental Rate
-                        </label>
-                        <input type="number" id="rental-rate" value="45" min="10" step="5">
-                    </div>
-                    
-                    <div class="roi-input-group">
-                        <label>
-                            Current Theft Rate
-                            <span class="hint">(% of fleet/year)</span>
-                        </label>
-                        <input type="number" id="theft-rate" value="1" min="0" max="10" step="0.1">
-                    </div>
-                    
-                    <div class="roi-input-group">
-                        <label>
-                            Staff Hours/Day on Key Mgmt
-                        </label>
-                        <input type="number" id="staff-hours" value="2" min="0" max="8" step="0.5">
-                    </div>
-                    
-                    <div class="roi-input-group">
-                        <label>
-                            Average Staff Hourly Rate
-                        </label>
-                        <input type="number" id="staff-rate" value="15" min="10" max="50">
-                    </div>
-                    
-                    <div class="roi-input-group">
-                        <label>
-                            Damage Disputes/Year
-                            <span class="hint">@ $500 avg</span>
-                        </label>
-                        <input type="number" id="disputes" value="5" min="0" max="100">
-                    </div>
-                </div>
-                
-                <div class="roi-results">
-                    <h3>Estimated Annual Savings</h3>
-                    
-                    <div class="roi-row">
-                        <div class="roi-row-label">
-                            <strong>Prevent Theft</strong>
-                            <div class="description">Reduce theft by 80% with GPS tracking & immobilization</div>
+                    <div class="calculation-result">
+                        <div class="calc-row">
+                            <span>Setup (Hardware):</span>
+                            <strong id="setup-cost">$1,490</strong>
                         </div>
-                        <div class="roi-row-value" id="theft-savings">$10,000</div>
-                    </div>
-                    
-                    <div class="roi-row">
-                        <div class="roi-row-label">
-                            <strong>Reduce Staff Time</strong>
-                            <div class="description">Eliminate manual key management</div>
+                        <div class="calc-row">
+                            <span>Monthly Cost:</span>
+                            <strong id="monthly-cost">$249.90/month</strong>
                         </div>
-                        <div class="roi-row-value" id="staff-savings">$10,950</div>
-                    </div>
-                    
-                    <div class="roi-row">
-                        <div class="roi-row-label">
-                            <strong>Increase Utilization</strong>
-                            <div class="description">10% more rental days via faster turnaround</div>
+                        <div class="calc-row">
+                            <span>Annual Cost:</span>
+                            <strong id="annual-cost">$2,998.80/year</strong>
                         </div>
-                        <div class="roi-row-value" id="utilization-benefit">$82,125</div>
-                    </div>
-                    
-                    <div class="roi-row">
-                        <div class="roi-row-label">
-                            <strong>Reduce Damage Disputes</strong>
-                            <div class="description">Photo inspection eliminates 80% of disputes</div>
+                        <div class="calc-row total">
+                            <span>Total Year 1:</span>
+                            <span id="total-cost">$4,488.80</span>
                         </div>
-                        <div class="roi-row-value" id="dispute-savings">$2,000</div>
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <button class="btn-primary">Get Custom Quote</button>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="roi-totals">
-                    <div class="roi-total-row">
-                        <span>Total Annual Benefit:</span>
-                        <span id="total-benefit">$105,075</span>
+                    <div class="calc-footer">
+                        <p>✓ Includes: White-label apps, installation training, ongoing support</p>
+                        <p>✓ No hidden fees | Cancel anytime</p>
                     </div>
-                    <div class="roi-total-row">
-                        <span>Your Annual Cost (ControlIt Full):</span>
-                        <span id="annual-cost">$15,294</span>
-                    </div>
-                    <div class="roi-total-row" style="font-size: 1rem; color: var(--gray);">
-                        <span style="padding-left: 2rem;">→ Setup (Year 1 only):</span>
-                        <span id="setup-cost">$7,500</span>
-                    </div>
-                    <div class="roi-total-row" style="font-size: 1rem; color: var(--gray);">
-                        <span style="padding-left: 2rem;">→ Subscription (recurring):</span>
-                        <span id="subscription-cost">$14,994/year</span>
-                    </div>
-                    <div class="roi-total-row highlight">
-                        <span>Net Benefit (Year 1):</span>
-                        <span id="net-benefit">$82,281</span>
-                    </div>
-                    <div class="roi-total-row highlight">
-                        <span>ROI:</span>
-                        <span id="roi-percent">538%</span>
-                    </div>
-                </div>
-                
-                <div class="roi-assumptions">
-                    <strong>Assumptions:</strong>
-                    <p>• 80% theft reduction with GPS tracking & remote immobilization</p>
-                    <p>• 100% elimination of key management time with keyless entry</p>
-                    <p>• 10% utilization increase through faster turnaround & reduced downtime</p>
-                    <p>• 80% reduction in damage disputes with automated photo inspection</p>
-                    <p style="margin-top: 0.75rem; font-style: italic;">* Results based on industry data and customer reports. Your actual results may vary.</p>
                 </div>
             </div>
         </div>
@@ -1950,15 +1491,6 @@
                 </div>
                 <div class="faq-item" onclick="toggleFAQ(this)">
                     <div class="faq-question">
-                        <span>What's the difference between Light, Gold, and Full?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p><strong>Light:</strong> Basic tracking with daily location updates, perfect for basic fleet visibility.<br><br><strong>Gold:</strong> Real-time tracking every 10 minutes, plus keyless entry and remote immobilization—ideal for professional operations.<br><br><strong>Full:</strong> Complete platform with geofencing, telemetry, white-label apps, and integrated booking/CRM—designed for rental companies.</p>
-                    </div>
-                </div>
-                <div class="faq-item" onclick="toggleFAQ(this)">
-                    <div class="faq-question">
                         <span>How long does installation take?</span>
                         <span class="faq-icon">▼</span>
                     </div>
@@ -1972,7 +1504,7 @@
                         <span class="faq-icon">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely! ControlIt Full is a white-label solution. The apps, dashboards, and customer communications all use your logo, colors, and branding.</p>
+                        <p>Absolutely! IturanMob is a white-label solution. The apps, dashboards, and customer communications all use your logo, colors, and branding.</p>
                     </div>
                 </div>
                 <div class="faq-item" onclick="toggleFAQ(this)">
@@ -1986,11 +1518,11 @@
                 </div>
                 <div class="faq-item" onclick="toggleFAQ(this)">
                     <div class="faq-question">
-                        <span>How does the Turo insurance work?</span>
+                        <span>Is there a minimum fleet size?</span>
                         <span class="faq-icon">▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>All ControlIt versions are compatible with off-trip car insurance custom-designed for Turo hosts by our partner Tint. This provides coverage when your vehicle is not actively rented, giving you complete protection for your fleet.</p>
+                        <p>No minimum, but our sweet spot is fleets of 10+ vehicles. For fleets of 30+, we waive customization fees (normally $0 for larger fleets).</p>
                     </div>
                 </div>
                 <div class="faq-item" onclick="toggleFAQ(this)">
@@ -2013,11 +1545,20 @@
                 </div>
                 <div class="faq-item" onclick="toggleFAQ(this)">
                     <div class="faq-question">
-                        <span>Can we integrate with our existing systems?</span>
+                        <span>Can we integrate with our existing ERP/payment system?</span>
                         <span class="faq-icon">▼</span>
                     </div>
                     <div class="faq-answer">
                         <p>Yes! We have API integrations with major rental ERPs (Locavia and others) and payment gateways (Stripe, Getnet, Pagar.me/Stone). Custom integrations available.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What happens if the internet connection is lost?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The system uses BLE (Bluetooth Low Energy) as a backup. Users can still lock/unlock vehicles even without internet. Data syncs when connectivity is restored.</p>
                     </div>
                 </div>
                 <div class="faq-item" onclick="toggleFAQ(this)">
@@ -2054,8 +1595,8 @@
                         <input type="text" id="company" name="company" required>
                     </div>
                     <div class="form-group">
-                        <label for="fleet-size-form">Fleet Size:</label>
-                        <select id="fleet-size-form" name="fleet-size" required>
+                        <label for="fleet-size">Fleet Size:</label>
+                        <select id="fleet-size" name="fleet-size" required>
                             <option value="">Select fleet size</option>
                             <option value="1-10">1-10 vehicles</option>
                             <option value="11-50">11-50 vehicles</option>
@@ -2149,71 +1690,28 @@
             icon.style.transform = answer.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
         }
 
-        // ROI Calculator
-        const fleetInput = document.getElementById('fleet-size');
-        const vehicleValueInput = document.getElementById('vehicle-value');
-        const rentalInput = document.getElementById('rental-rate');
-        const theftRateInput = document.getElementById('theft-rate');
-        const staffHoursInput = document.getElementById('staff-hours');
-        const staffRateInput = document.getElementById('staff-rate');
-        const disputesInput = document.getElementById('disputes');
-        
-        function updateROI() {
-            const fleet = parseInt(fleetInput.value) || 50;
-            const vehicleValue = parseInt(vehicleValueInput.value) || 25000;
-            const dailyRate = parseInt(rentalInput.value) || 45;
-            const theftRate = parseFloat(theftRateInput.value) || 1;
-            const staffHours = parseFloat(staffHoursInput.value) || 2;
-            const staffRate = parseInt(staffRateInput.value) || 15;
-            const disputes = parseInt(disputesInput.value) || 5;
+        // Pricing Calculator
+        const slider = document.getElementById('vehicle-slider');
+        const vehicleDisplay = document.getElementById('vehicle-display');
+        const setupCost = document.getElementById('setup-cost');
+        const monthlyCost = document.getElementById('monthly-cost');
+        const annualCost = document.getElementById('annual-cost');
+        const totalCost = document.getElementById('total-cost');
+
+        slider.addEventListener('input', function() {
+            const vehicles = parseInt(this.value);
+            vehicleDisplay.textContent = vehicles;
             
-            // 1. THEFT PREVENTION
-            const expectedThefts = fleet * (theftRate / 100);
-            const preventedThefts = expectedThefts * 0.80;
-            const theftSavings = preventedThefts * vehicleValue;
+            const setup = vehicles * 149;
+            const monthly = vehicles * 24.99;
+            const annual = monthly * 12;
+            const total = setup + annual;
             
-            // 2. STAFF TIME SAVINGS
-            const staffSavings = staffHours * 365 * staffRate;
-            
-            // 3. UTILIZATION INCREASE
-            const utilizationBenefit = fleet * dailyRate * 365 * 0.10;
-            
-            // 4. DISPUTE REDUCTION
-            const disputeSavings = disputes * 0.80 * 500;
-            
-            // TOTAL BENEFITS
-            const totalBenefit = theftSavings + staffSavings + utilizationBenefit + disputeSavings;
-            
-            // COSTS (ControlIt Full)
-            const setupCost = fleet * 149.99;
-            const subscriptionCost = fleet * 24.99 * 12;
-            const totalCost = setupCost + subscriptionCost;
-            
-            // NET BENEFIT & ROI
-            const netBenefit = totalBenefit - totalCost;
-            const roi = (netBenefit / totalCost * 100).toFixed(0);
-            
-            // UPDATE DISPLAY
-            document.getElementById('theft-savings').textContent = '+$' + Math.round(theftSavings).toLocaleString();
-            document.getElementById('staff-savings').textContent = '+$' + Math.round(staffSavings).toLocaleString();
-            document.getElementById('utilization-benefit').textContent = '+$' + Math.round(utilizationBenefit).toLocaleString();
-            document.getElementById('dispute-savings').textContent = '+$' + Math.round(disputeSavings).toLocaleString();
-            document.getElementById('total-benefit').textContent = '$' + Math.round(totalBenefit).toLocaleString();
-            document.getElementById('setup-cost').textContent = '$' + Math.round(setupCost).toLocaleString();
-            document.getElementById('subscription-cost').textContent = '$' + Math.round(subscriptionCost).toLocaleString() + '/year';
-            document.getElementById('annual-cost').textContent = '$' + Math.round(totalCost).toLocaleString();
-            document.getElementById('net-benefit').textContent = '$' + Math.round(netBenefit).toLocaleString();
-            document.getElementById('roi-percent').textContent = roi + '%';
-        }
-        
-        // Add event listeners to all inputs
-        fleetInput.addEventListener('input', updateROI);
-        vehicleValueInput.addEventListener('input', updateROI);
-        rentalInput.addEventListener('input', updateROI);
-        theftRateInput.addEventListener('input', updateROI);
-        staffHoursInput.addEventListener('input', updateROI);
-        staffRateInput.addEventListener('input', updateROI);
-        disputesInput.addEventListener('input', updateROI);
+            setupCost.textContent = '$' + setup.toLocaleString();
+            monthlyCost.textContent = '$' + monthly.toFixed(2) + '/month';
+            annualCost.textContent = '$' + annual.toFixed(2) + '/year';
+            totalCost.textContent = '$' + total.toFixed(2);
+        });
 
         // Form submission
         function handleFormSubmit(event) {
@@ -2228,9 +1726,6 @@
             if (firstFAQ) {
                 toggleFAQ(firstFAQ);
             }
-            
-            // Initialize ROI calculator
-            updateROI();
         });
     </script>
 </body>
