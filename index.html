@@ -192,16 +192,26 @@
         </div>
     </section>
 
-    <!--<section id="roi" class="roi-section">
+    <section id="roi" class="roi-section">
         <div class="container">
             <div class="section-header">
                 <h2>Calculate Your Potential Savings</h2>
-                <p>See how much you can save by automating operations and preventing theft.</p>
+                <p>See how much you can save based on your specific business model.</p>
             </div>
             
             <div class="roi-wrapper">
                 <div class="roi-inputs">
-                    <h3>Your Fleet Details</h3>
+                    <div class="input-group" style="background: #eef2f6; padding: 1rem; border-radius: 8px; border: 1px solid #dce1e7; margin-bottom: 2rem;">
+                        <label style="color: var(--navy-brand); font-size: 1rem;">Select Your Business Model</label>
+                        <select id="business-type" onchange="toggleSegmentFields()" style="width: 100%; padding: 0.8rem; border-radius: 6px; border: 1px solid #ccc; font-weight: 600; color: var(--navy-brand);">
+                            <option value="rental">Daily Rental Company</option>
+                            <option value="gig">Gig-Economy / Subscription</option>
+                            <option value="corporate">Corporate Fleet</option>
+                        </select>
+                    </div>
+
+                    <h3>Fleet Assumptions</h3>
+                    
                     <div class="input-group">
                         <label>Fleet Size</label>
                         <input type="number" id="fleet-size" value="50">
@@ -210,29 +220,36 @@
                         <label>Avg. Vehicle Value ($)</label>
                         <input type="number" id="vehicle-value" value="25000">
                     </div>
+
                     <div class="input-group">
-                        <label>Daily Rental Rate ($)</label>
-                        <input type="number" id="rental-rate" value="45">
-                    </div>
-                    <div class="input-group">
-                        <label>Staff Hourly Rate ($)</label>
-                        <input type="number" id="staff-rate" value="15">
+                        <label id="staff-label">Counter Time Saved (Mins/Rental)</label>
+                        <div style="font-size: 0.8rem; color: #666; margin-bottom: 0.5rem;" id="staff-hint">
+                            Time saved on physical handover & paperwork.
+                        </div>
+                        <input type="number" id="staff-metric">
                     </div>
 
-                    <button class="btn-text-toggle" onclick="toggleAssumptions()">Customize Assumptions ▾</button>
-
+                    <div class="input-group">
+                        <label id="bonus-label">Utilization Increase (%)</label>
+                        <div style="font-size: 0.8rem; color: #666; margin-bottom: 0.5rem;" id="bonus-hint">
+                            Additional rental days gained via 24/7 access.
+                        </div>
+                        <input type="number" id="bonus-metric">
+                    </div>
+                    
+                    <button class="btn-text-toggle" onclick="toggleAssumptions()">View Advanced Assumptions ▾</button>
                     <div id="roi-assumptions" class="roi-hidden-inputs">
                         <div class="input-group">
-                            <label>Theft Rate (% per year)</label>
-                            <input type="number" id="theft-rate" value="1" step="0.1">
+                            <label>Hourly Staff Cost ($)</label>
+                            <input type="number" id="staff-rate" value="20">
                         </div>
                         <div class="input-group">
-                            <label>Staff Hours Saved (per day)</label>
-                            <input type="number" id="staff-hours" value="2" step="0.5">
+                            <label>Avg. Monthly Revenue per Car ($)</label>
+                            <input type="number" id="monthly-revenue" value="1200">
                         </div>
                         <div class="input-group">
-                            <label>Utilization Increase (%)</label>
-                            <input type="number" id="utilization-rate" value="10" step="1">
+                            <label>Annual Theft Rate (%)</label>
+                            <input type="number" id="theft-rate" value="1">
                         </div>
                     </div>
                 </div>
@@ -241,138 +258,42 @@
                     <h3>Estimated Annual Benefit</h3>
                     
                     <div class="roi-row">
-                        <span>🛡️ Theft Prevention</span>
-                        <strong class="text-green" id="theft-savings">$0</strong>
+                        <span>🛡️ Asset Protection</span>
+                        <strong class="text-green" id="res-asset">$0</strong>
                     </div>
                     <div class="roi-row">
-                        <span>⚡ Operational Efficiency</span>
-                        <strong class="text-green" id="staff-savings">$0</strong>
+                        <span id="res-label-staff">⚡ Staff Efficiency</span>
+                        <strong class="text-green" id="res-staff">$0</strong>
                     </div>
                     <div class="roi-row">
-                        <span>📈 Increased Utilization</span>
-                        <strong class="text-green" id="utilization-benefit">$0</strong>
+                        <span id="res-label-bonus">📈 Utilization Boost</span>
+                        <strong class="text-green" id="res-bonus">$0</strong>
                     </div>
                     
                     <hr style="border-color: rgba(0,0,0,0.1); margin: 1.5rem 0;">
                     
                     <div class="roi-total">
                         <span>Total Annual Value</span>
-                        <div class="roi-big-number" id="total-benefit">$0</div>
+                        <div class="roi-big-number" id="res-total">$0</div>
                     </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(93, 191, 189, 0.1); border: 1px solid var(--teal-brand); border-radius: 8px; text-align: center;">
+                        <h4 style="color: var(--navy-brand); font-size: 1.1rem; margin-bottom: 0.5rem;">Need a detailed breakdown?</h4>
+                        <p style="font-size: 0.9rem; color: var(--gray-medium); margin-bottom: 1.2rem; line-height: 1.4;">
+                            Receive a PDF explanation of these formulas and a custom strategy for your fleet.
+                        </p>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="openModal('ROI PDF Request')">
+                            Get the Full Report
+                        </button>
+                    </div>
+
                     <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 1rem; text-align: center;">
-                        *Estimates based on industry averages.
+                        *Estimates based on typical IturanMob performance benchmarks.
                     </p>
                 </div>
             </div>
         </div>
-    </section>-->
-
-<section id="roi" class="roi-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Calculate Your Potential Savings</h2>
-            <p>See how much you can save based on your specific business model.</p>
-        </div>
-        
-        <div class="roi-wrapper">
-            <div class="roi-inputs">
-                <div class="input-group" style="background: #eef2f6; padding: 1rem; border-radius: 8px; border: 1px solid #dce1e7; margin-bottom: 2rem;">
-                    <label style="color: var(--navy-brand); font-size: 1rem;">Select Your Business Model</label>
-                    <select id="business-type" onchange="toggleSegmentFields()" style="width: 100%; padding: 0.8rem; border-radius: 6px; border: 1px solid #ccc; font-weight: 600; color: var(--navy-brand);">
-                        <option value="rental">Daily Rental Company</option>
-                        <option value="gig">Gig-Economy / Subscription</option>
-                        <option value="corporate">Corporate Fleet</option>
-                    </select>
-                </div>
-
-                <h3>Fleet Assumptions</h3>
-                
-                <div class="input-group">
-                    <label>Fleet Size</label>
-                    <input type="number" id="fleet-size" value="50">
-                </div>
-                <div class="input-group">
-                    <label>Avg. Vehicle Value ($)</label>
-                    <input type="number" id="vehicle-value" value="25000">
-                </div>
-
-                <div class="input-group">
-                    <label id="staff-label">Counter Time Saved (Mins/Rental)</label>
-                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 0.5rem;" id="staff-hint">
-                        Time saved on physical handover & paperwork.
-                    </div>
-                    <input type="number" id="staff-metric" value="20">
-                </div>
-
-                <div class="input-group">
-                    <label id="bonus-label">Utilization Increase (%)</label>
-                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 0.5rem;" id="bonus-hint">
-                        Additional rental days gained via 24/7 access.
-                    </div>
-                    <input type="number" id="bonus-metric" value="10">
-                </div>
-                
-                <button class="btn-text-toggle" onclick="toggleAssumptions()">View Advanced Assumptions ▾</button>
-                <div id="roi-assumptions" class="roi-hidden-inputs">
-                    <div class="input-group">
-                        <label>Hourly Staff Cost ($)</label>
-                        <input type="number" id="staff-rate" value="20">
-                    </div>
-                    <div class="input-group">
-                        <label>Avg. Monthly Revenue per Car ($)</label>
-                        <input type="number" id="monthly-revenue" value="1200">
-                    </div>
-                    <div class="input-group">
-                        <label>Annual Theft Rate (%)</label>
-                        <input type="number" id="theft-rate" value="1">
-                    </div>
-                </div>
-            </div>
-
-            <div class="roi-results">
-                <h3>Estimated Annual Benefit</h3>
-                
-                <div class="roi-row">
-                    <span>🛡️ Asset Protection</span>
-                    <strong class="text-green" id="res-asset">$0</strong>
-                </div>
-                <div class="roi-row">
-                    <span id="res-label-staff">⚡ Staff Efficiency</span>
-                    <strong class="text-green" id="res-staff">$0</strong>
-                </div>
-                <div class="roi-row">
-                    <span id="res-label-bonus">📈 Utilization Boost</span>
-                    <strong class="text-green" id="res-bonus">$0</strong>
-                </div>
-                
-                <hr style="border-color: rgba(0,0,0,0.1); margin: 1.5rem 0;">
-                
-                <div class="roi-total">
-                    <span>Total Annual Value</span>
-                    <div class="roi-big-number" id="res-total">$0</div>
-                </div>
-                
-                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(93, 191, 189, 0.1); border: 1px solid var(--teal-brand); border-radius: 8px; text-align: center;">
-                    <h4 style="color: var(--navy-brand); font-size: 1.1rem; margin-bottom: 0.5rem;">Need a detailed breakdown?</h4>
-                    <p style="font-size: 0.9rem; color: var(--gray-medium); margin-bottom: 1.2rem; line-height: 1.4;">
-                        Receive a PDF explanation of these formulas and a custom strategy for your fleet.
-                    </p>
-                    <button class="btn btn-primary" style="width: 100%;" onclick="openModal('ROI PDF Request')">
-                        Get the Full Report
-                    </button>
-                </div>
-
-
-
-                <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 1rem; text-align: center;">
-                    *Estimates based on typical IturanMob performance benchmarks.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
+    </section>
 
     <section id="pricing" class="pricing">
         <div class="container">
